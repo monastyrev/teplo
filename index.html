@@ -19,202 +19,244 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
 </head>
 <body>
   <div class="container">
-    <div class="col-sm-16">
-      <form class="form-horizontal">
-        <fieldset>
-          <legend><strong>Параметры помещения</strong></legend>
-          <div class="form-group row">
-            <label for="select-tp" class="col-sm-4 col-form-label col-form-label-sm">Тип помещения</label>
-            <div class="col-sm-2">
-              <select id="select-tp" class="form-control form-control-sm" name="tipPom" required>
-                <option value="" disabled selected>Выберите ...</option>
-                <option value="tp1">Кухня, комната, коридор</option>
-                <option value="tp2">Ванная, балкон, тамбур</option>
-              </select>
+    <div class="row">
+      <div class="col-md-4">
+        <p>Комментарии и ссылки</p>
+      </div>
+      <div class="col-md-6">
+        <form class="form-horizontal">
+          <fieldset>
+            <legend><strong>Параметры помещения</strong></legend>
+            <div class="form-group row">
+              <label for="select-tp" class="col-md-4 col-form-label col-form-label-sm">Тип помещения</label>
+              <div class="col-md-3">
+                <select id="select-tp" class="form-control form-control-sm" name="tipPom" required>
+                  <option value="" disabled selected>Выберите ...</option>
+                  <option value="tp1">Кухня, комната, коридор</option>
+                  <option value="tp2">Ванная, балкон, тамбур</option>
+                </select>
+              </div>
             </div>
-          </div>
-          <div class="form-group row">
-            <label for="select-to" class="col-sm-4 col-form-label col-form-label-sm">Тип обогрева</label>
-            <div class="col-sm-2">
-              <select id="select-to" class="form-control form-control-sm" name="tipObo" required>
-                <option value="" disabled selected>Выберите ...</option>
-                <option value="to1">Комфортный</option>
-                <option value="to2">Основной</option>
-              </select>
+            <div class="form-group row">
+              <label for="select-to" class="col-md-4 col-form-label col-form-label-sm">Тип обогрева</label>
+              <div class="col-md-3">
+                <select id="select-to" class="form-control form-control-sm" name="tipObo" required>
+                  <option value="" disabled selected>Выберите ...</option>
+                  <option value="to1">Комфортный</option>
+                  <option value="to2">Основной</option>
+                </select>
+              </div>
             </div>
-          </div>
-          <div class="form-group row">
-            <label for="input-a" class="col-sm-4 col-form-label col-form-label-sm">Размер А</label>
-            <div class="col-sm-2 input-group input-group-sm">
-              <input type="number" class="form-control form-control-sm" id="input-a" name="a" min="1" step="0.01" required>
-              <span class="input-group-addon">м</span>
+            <div class="form-group row">
+              <label for="input-a" class="col-sm-4 col-form-label col-form-label-sm">Размер А</label>
+              <div class="col-md-3 input-group input-group-sm">
+                <input type="number" class="form-control form-control-sm" id="input-a" name="a" min="1" step="0.01" required>
+                <span class="input-group-addon">м</span>
+              </div>
             </div>
-          </div>
-          <div class="form-group row">
-            <label for="input-b" class="col-sm-4 col-form-label col-form-label-sm">Размер B</label>
-            <div class="col-sm-2 input-group input-group-sm">
-              <input type="number" class="form-control form-control-sm" id="input-b" name="b" min="1" step="0.01" required>
-              <span class="input-group-addon">м</span>
+            <div class="form-group row">
+              <label for="input-b" class="col-sm-4 col-form-label col-form-label-sm">Размер B</label>
+              <div class="col-md-3 input-group input-group-sm">
+                <input type="number" class="form-control form-control-sm" id="input-b" name="b" min="1" step="0.01" required>
+                <span class="input-group-addon">м</span>
+              </div>
             </div>
-          </div>
-          <div class="form-group row">
-            <label for="input-a1" class="col-sm-4 col-form-label col-form-label-sm">Размер А1</label>
-            <div class="col-sm-2 input-group input-group-sm">
-              <input type="number" class="form-control form-control-sm" id="input-a1" name="a1" min="0" step="0.01" max="100">
-              <span class="input-group-addon">м</span>
+            <div class="form-group row">
+              <label for="input-a1" class="col-sm-4 col-form-label col-form-label-sm">Размер А1</label>
+              <div class="col-md-3 input-group input-group-sm">
+                <input type="number" class="form-control form-control-sm" id="input-a1" name="a1" min="0" step="0.01" max="100">
+                <span class="input-group-addon">м</span>
+              </div>
             </div>
-          </div>
-          <div class="form-group row">
-            <label for="input-b1" class="col-sm-4 col-form-label col-form-label-sm">Размер B1</label>
-            <div class="col-sm-2 input-group input-group-sm">
-              <input type="number" class="form-control form-control-sm" id="input-b1" name="b1" min="0" step="0.01" max="100">
-              <span class="input-group-addon">м</span>
+            <div class="form-group row">
+              <label for="input-b1" class="col-sm-4 col-form-label col-form-label-sm">Размер B1</label>
+              <div class="col-md-3 input-group input-group-sm">
+                <input type="number" class="form-control form-control-sm" id="input-b1" name="b1" min="0" step="0.01" max="100">
+                <span class="input-group-addon">м</span>
+              </div>
             </div>
-          </div>
-          <div class="form-group row">
-            <label for="input-S" class="col-sm-4 col-form-label col-form-label-sm">Площадь теплого пола</label>
-            <div class="col-sm-2 input-group input-group-sm">
-              <input type="number" class="form-control form-control-sm" id="input-S" name="S" readonly>
-              <span class="input-group-addon">м2</span>
+            <div class="form-group row">
+              <label for="input-S" class="col-sm-4 col-form-label col-form-label-sm">Площадь теплого пола</label>
+              <div class="col-md-3 input-group input-group-sm">
+                <input type="number" class="form-control form-control-sm" id="input-S" name="S" readonly>
+                <span class="input-group-addon">м2</span>
+              </div>
             </div>
-          </div>
-          <div class="form-group row">
-            <label for="input-P" class="col-sm-4 col-form-label col-form-label-sm">Рекомендуемая мощность кабеля</label>
-            <div class="col-sm-2 input-group input-group-sm">
-              <input name="P" class="form-control form-control-sm" id="input-P" type="number" readonly>
-              <span class="input-group-addon">Вт</span>
+            <div class="form-group row">
+              <label for="input-P" class="col-sm-4 col-form-label col-form-label-sm">Рекомендуемая мощность кабеля</label>
+              <div class="col-md-3 input-group input-group-sm">
+                <input name="P" class="form-control form-control-sm" id="input-P" type="number" readonly>
+                <span class="input-group-addon">Вт</span>
+              </div>
             </div>
-          </div>
-          <div class="form-group row">
-            <label for="input-L" class="col-sm-4 col-form-label col-form-label-sm">Длина кабеля</label>
-            <div class="col-sm-2 input-group input-group-sm">
-              <input name="L" class="form-control form-control-sm" id="input-L" type="number" readonly>
-              <span class="input-group-addon">м</span>
+            <div class="form-group row">
+              <label for="input-L" class="col-sm-4 col-form-label col-form-label-sm">Длина кабеля</label>
+              <div class="col-md-3 input-group input-group-sm">
+                <input name="L" class="form-control form-control-sm" id="input-L" type="number" readonly>
+                <span class="input-group-addon">м</span>
+              </div>
             </div>
-          </div>
-          <div class="form-group row">
+            <div class="form-group row">
+              <div class="col-md-3"></div>
+              <div class="calculate-first">
+                <button type="submit" class="btn btn-primary btn-sm">Рассчитать</button>
+              </div>
+              <div class="reset">
+                <button type="reset" class="btn btn-link btn-sm">Сброс</button>
+              </div>
+            </div>
+          </fieldset>
+        </form>
+      </div>
+      <div class="col-md-2">
+        <p>Картинки</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col col-sm-4">
+        <p>Комментарии и ссылки</p>
+      </div>
+      <div class="col col-sm-6">
+        <form class="form-horizontal">
+          <fieldset>
+            <legend><strong>Данные для монтажа ленты</strong></legend>
+            <div class="form-group row">
+              <label for="input-p1" class="col-sm-4 col-form-label col-form-label-sm">Вынос кабеля за ленту</label>
+              <div class="col-sm-3 input-group input-group-sm">
+                <input name="p1" class="form-control form-control-sm" id="input-p1" type="number" readonly value="0.05">
+                <span class="input-group-addon">м</span>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="input-p2" class="col-sm-4 col-form-label col-form-label-sm">Отступ ленты от линии А</label>
+              <div class="col-sm-3 input-group input-group-sm">
+                <input name="p2" class="form-control form-control-sm" id="input-p2" type="number" readonly value="0.15">
+                <span class="input-group-addon">м</span>
+              </div>
+            </div>
+            <div class="form-group row" style="display: none;">
+              <label for="input-p3" class="col-sm-4 col-form-label col-form-label-sm">Отступ ленты от линии С</label>
+              <div class="col-sm-3 input-group input-group-sm">
+                <input name="p3" class="form-control form-control-sm" id="input-p3" type="number" readonly value="0.05">
+                <span class="input-group-addon">м</span>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="input-p4" class="col-sm-4 col-form-label col-form-label-sm">Число полос ленты</label>
+              <div class="col-sm-3 input-group input-group-sm">
+                <input name="p4" class="form-control form-control-sm" id="input-p4" type="number" readonly>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="input-p5" class="col-sm-4 col-form-label col-form-label-sm">Шаг укладки ленты</label>
+              <div class="col-sm-3 input-group input-group-sm">
+                <input name="p5" class="form-control form-control-sm" id="input-p5" type="number" readonly>
+                <span class="input-group-addon">м</span>
+              </div>
+            </div>
+          </fieldset>
+        </form>
+      </div>
+      <div class="col-md-2">
+        <p>Картинки</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col col-sm-4">
+        <p>Комментарии и ссылки</p>
+      </div>
+      <div class="col col-sm-6">
+        <form class="form-horizontal">
+          <fieldset>
+            <legend><strong>Данные для монтажа кабеля</strong></legend>
+            <div class="form-group row">
+              <label for="input-q" class="col-sm-4 col-form-label col-form-label-sm">Шаг укладки кабеля q</label>
+              <div class="col-sm-3 input-group input-group-sm">
+                <input name="q" class="form-control form-control-sm" id="input-q" type="number" step="0.001">
+                <span class="input-group-addon">м</span>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="input-k" class="col-sm-4 col-form-label col-form-label-sm">Число полос кабеля k</label>
+              <div class="col-sm-3 input-group input-group-sm">
+                <input name="k" class="form-control form-control-sm" id="input-k" type="number" step="1">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="input-k1" class="col-sm-4 col-form-label col-form-label-sm">Число полос кабеля k1</label>
+              <div class="col-sm-3 input-group input-group-sm">
+                <input name="k1" class="form-control form-control-sm" id="input-k1" type="number" step="1">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="input-l" class="col-sm-4 col-form-label col-form-label-sm">Длина полосы кабеля l</label>
+              <div class="col-sm-3 input-group input-group-sm">
+                <input name="l" class="form-control form-control-sm" id="input-l" type="number" readonly>
+                <span class="input-group-addon">м</span>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="input-l1" class="col-sm-4 col-form-label col-form-label-sm">Длина полосы кабеля l1</label>
+              <div class="col-sm-3 input-group input-group-sm">
+                <input name="l1" class="form-control form-control-sm" id="input-l1" type="number" readonly>
+                <span class="input-group-addon">м</span>
+              </div>
+            </div>
+            <div class="form-group row">
             <div class="col-sm-3"></div>
-            <div class="calculate-first">
-              <button type="submit" class="btn btn-primary btn-sm">Рассчитать</button>
+              <div class="col-sm-1 calculate-third">
+                <button type="submit" class="btn btn-primary btn-sm">Пересчитать размеры</button>
+              </div>
             </div>
-            <div class="reset">
-              <button type="reset" class="btn btn-link btn-sm">Сброс</button>
+          </fieldset>
+        </form>
+      </div>
+      <div class="col-md-2">
+        <p>Картинки</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col col-sm-4">
+        <p>Комментарии и ссылки</p>
+      </div>
+      <div class="col col-sm-6">
+        <form class="form-horizontal">
+          <fieldset>
+            <legend><strong>Итоговые размеры теплого пола</strong></legend>
+            <div class="form-group row">
+              <label for="input-sizeA" class="col-sm-4 col-form-label col-form-label-sm">Размер А</label>
+              <div class="col-sm-3 input-group input-group-sm">
+                <input name="sizeA" class="form-control form-control-sm" id="input-sizeA" type="text" readonly>
+                <span class="input-group-addon">м</span>
+              </div>
             </div>
-          </div>
-        </fieldset>
-      </form>
-      <form class="form-horizontal">
-        <fieldset>
-          <legend><strong>Данные для монтажа ленты</strong></legend>
-          <div class="form-group row">
-            <label for="input-p1" class="col-sm-4 col-form-label col-form-label-sm">Вынос кабеля за ленту</label>
-            <div class="col-sm-2 input-group input-group-sm">
-              <input name="p1" class="form-control form-control-sm" id="input-p1" type="number" readonly value="0.05">
-              <span class="input-group-addon">м</span>
+            <div class="form-group row">
+              <label for="input-sizeB" class="col-sm-4 col-form-label col-form-label-sm">Размер B</label>
+              <div class="col-sm-3 input-group input-group-sm">
+                <input name="sizeB" class="form-control form-control-sm" id="input-sizeB" type="text" readonly>
+                <span class="input-group-addon">м</span>
+              </div>
             </div>
-          </div>
-          <div class="form-group row">
-            <label for="input-p2" class="col-sm-4 col-form-label col-form-label-sm">Отступ ленты от линии А</label>
-            <div class="col-sm-2 input-group input-group-sm">
-              <input name="p2" class="form-control form-control-sm" id="input-p2" type="number" readonly value="0.15">
-              <span class="input-group-addon">м</span>
+            <div class="form-group row">
+              <label for="input-sizeA1" class="col-sm-4 col-form-label col-form-label-sm">Размер А1</label>
+              <div class="col-sm-3 input-group input-group-sm">
+                <input name="sizeA1" class="form-control form-control-sm" id="input-sizeA1" type="text" readonly>
+                <span class="input-group-addon">м</span>
+              </div>
             </div>
-          </div>
-          <div class="form-group row" style="display: none;">
-            <label for="input-p3" class="col-sm-4 col-form-label col-form-label-sm">Отступ ленты от линии С</label>
-            <div class="col-sm-2 input-group input-group-sm">
-              <input name="p3" class="form-control form-control-sm" id="input-p3" type="number" readonly value="0.05">
-              <span class="input-group-addon">м</span>
+            <div class="form-group row">
+              <label for="input-sizeB1" class="col-sm-4 col-form-label col-form-label-sm">Размер B1</label>
+              <div class="col-sm-3 input-group input-group-sm">
+                <input name="sizeB1" class="form-control form-control-sm" id="input-sizeB1" type="text" readonly>
+                <span class="input-group-addon">м</span>
+              </div>
             </div>
-          </div>
-          <div class="form-group row">
-            <label for="input-p4" class="col-sm-4 col-form-label col-form-label-sm">Число полос ленты</label>
-            <div class="col-sm-2">
-              <input name="p4" class="form-control form-control-sm" id="input-p4" type="number" readonly>
-            </div>
-          </div>
-          <div class="form-group row">
-            <label for="input-p5" class="col-sm-4 col-form-label col-form-label-sm">Шаг укладки ленты</label>
-            <div class="col-sm-2 input-group input-group-sm">
-              <input name="p5" class="form-control form-control-sm" id="input-p5" type="number" readonly>
-              <span class="input-group-addon">м</span>
-            </div>
-          </div>
-        </fieldset>
-        <fieldset>
-          <legend><strong>Данные для монтажа кабеля</strong></legend>
-          <div class="form-group row">
-            <label for="input-q" class="col-sm-4 col-form-label col-form-label-sm">Шаг укладки кабеля q</label>
-            <div class="col-sm-2 input-group input-group-sm">
-              <input name="q" class="form-control form-control-sm" id="input-q" type="number" step="0.001">
-              <span class="input-group-addon">м</span>
-            </div>
-          </div>
-          <div class="form-group row">
-            <label for="input-k" class="col-sm-4 col-form-label col-form-label-sm">Число полос кабеля k</label>
-            <div class="col-sm-2">
-              <input name="k" class="form-control form-control-sm" id="input-k" type="number" step="1">
-            </div>
-          </div>
-          <div class="form-group row">
-            <label for="input-k1" class="col-sm-4 col-form-label col-form-label-sm">Число полос кабеля k1</label>
-            <div class="col-sm-2">
-              <input name="k1" class="form-control form-control-sm" id="input-k1" type="number" step="1">
-            </div>
-          </div>
-          <div class="form-group row">
-            <label for="input-l" class="col-sm-4 col-form-label col-form-label-sm">Длина полосы кабеля l</label>
-            <div class="col-sm-2 input-group input-group-sm">
-              <input name="l" class="form-control form-control-sm" id="input-l" type="number" readonly>
-              <span class="input-group-addon">м</span>
-            </div>
-          </div>
-          <div class="form-group row">
-            <label for="input-l1" class="col-sm-4 col-form-label col-form-label-sm">Длина полосы кабеля l1</label>
-            <div class="col-sm-2 input-group input-group-sm">
-              <input name="l1" class="form-control form-control-sm" id="input-l1" type="number" readonly>
-              <span class="input-group-addon">м</span>
-            </div>
-          </div>
-          <div class="form-group row">
-          <div class="col-sm-3"></div>
-            <div class="col-sm-1 calculate-third">
-              <button type="submit" class="btn btn-primary btn-sm">Пересчитать размеры</button>
-            </div>
-          </div>
-        </fieldset>
-        <fieldset>
-          <legend><strong>Итоговые размеры теплого пола</strong></legend>
-          <div class="form-group row">
-            <label for="input-sizeA" class="col-sm-4 col-form-label col-form-label-sm">Размер А</label>
-            <div class="col-sm-2 input-group input-group-sm">
-              <input name="sizeA" class="form-control form-control-sm" id="input-sizeA" type="text" readonly>
-              <span class="input-group-addon">м</span>
-            </div>
-          </div>
-          <div class="form-group row">
-            <label for="input-sizeB" class="col-sm-4 col-form-label col-form-label-sm">Размер B</label>
-            <div class="col-sm-2 input-group input-group-sm">
-              <input name="sizeB" class="form-control form-control-sm" id="input-sizeB" type="text" readonly>
-              <span class="input-group-addon">м</span>
-            </div>
-          </div>
-          <div class="form-group row">
-            <label for="input-sizeA1" class="col-sm-4 col-form-label col-form-label-sm">Размер А1</label>
-            <div class="col-sm-2 input-group input-group-sm">
-              <input name="sizeA1" class="form-control form-control-sm" id="input-sizeA1" type="text" readonly>
-              <span class="input-group-addon">м</span>
-            </div>
-          </div>
-          <div class="form-group row">
-            <label for="input-sizeB1" class="col-sm-4 col-form-label col-form-label-sm">Размер B1</label>
-            <div class="col-sm-2 input-group input-group-sm">
-              <input name="sizeB1" class="form-control form-control-sm" id="input-sizeB1" type="text" readonly>
-              <span class="input-group-addon">м</span>
-            </div>
-          </div>
-        </fieldset>
-      </form>
+          </fieldset>
+        </form>
+      </div>
+      <div class="col col-sm-2">
+        <p>Картинки</p>
+      </div>
     </div>
   </div>
   <script>
