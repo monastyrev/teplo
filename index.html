@@ -355,17 +355,17 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
           var p5 = (model.b - model.p2 - model.p3) / (model.p4 - 1)
           p5 = p5.toFixed(2);
           $('input[name=p5]').val(p5); // шаг укладки ленты
-            var q = model.S / model.L;
-            q = nearestStep(q);
-            $('input[name=q]').val(q.toFixed(3)); // шаг укладки кабеля
-            var k = model.a / q + 1;
-            k = nearestEven(k);
-            $('input[name=k]').val(k); // число полос кабеля
-            if (model.size1) {
-              var k1 = model.a1 / q + 1;
-                k1 = nearestEven(k1);
-                $('input[name=k1]').val(k1); // число полос кабеля
-            }
+          var q = model.S / model.L;
+          q = nearestStep(q);
+          $('input[name=q]').val(q.toFixed(3)); // шаг укладки кабеля
+          var k = model.a / q + 1;
+          k = nearestEven(k);
+          $('input[name=k]').val(k); // число полос кабеля
+          if (model.size1) {
+            var k1 = model.a1 / q + 1;
+              k1 = nearestEven(k1);
+              $('input[name=k1]').val(k1); // число полос кабеля
+          }
     }
     
     function calculateThird() {      
