@@ -1,5 +1,5 @@
 window.onload = function() {
-    
+
     var model = {};
 
     const POWER = {
