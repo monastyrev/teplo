@@ -82,7 +82,6 @@ window.onload = function() {
       
     $('.calculate-first').click(function(e) {
       calculateParams();
-      calculateData();
       calculateResult();
     });
     
@@ -120,9 +119,6 @@ window.onload = function() {
       var L = powerLength[1];
       model.L = L;
       $('input[name=L]').val(L); // фактическая длина кабеля
-    }
-    
-    function calculateData() {
       // ------------------------------
       var p1 = $('input[name=p1]').val(); // вынос кабеля за ленту
       model.p1 = parseFloat(p1);
@@ -133,20 +129,20 @@ window.onload = function() {
       var p4 = (model.b - model.p2 - model.p3) / 0.6 + 1;
       model.p4 = Math.ceil(p4);
       $('input[name=p4]').val(model.p4); // число полос ленты
-          var p5 = (model.b - model.p2 - model.p3) / (model.p4 - 1)
-          p5 = p5.toFixed(2);
-          $('input[name=p5]').val(p5); // шаг укладки ленты
-          var q = model.S / model.L;
-          q = nearestStep(q);
-          $('input[name=q]').val(q.toFixed(3)); // шаг укладки кабеля
-          var k = model.a / q + 1;
-          k = nearestEven(k);
-          $('input[name=k]').val(k); // число полос кабеля
-          if (model.size1) {
-            var k1 = model.a1 / q + 1;
-              k1 = nearestEven(k1);
-              $('input[name=k1]').val(k1); // число полос кабеля
-          }
+      var p5 = (model.b - model.p2 - model.p3) / (model.p4 - 1)
+      p5 = p5.toFixed(2);
+      $('input[name=p5]').val(p5); // шаг укладки ленты
+      var q = model.S / model.L;
+      q = nearestStep(q);
+      $('input[name=q]').val(q.toFixed(3)); // шаг укладки кабеля
+      var k = model.a / q + 1;
+      k = nearestEven(k);
+      $('input[name=k]').val(k); // число полос кабеля
+      if (model.size1) {
+        var k1 = model.a1 / q + 1;
+        k1 = nearestEven(k1);
+        $('input[name=k1]').val(k1); // число полос кабеля
+      }
     }
     
     function calculateResult() {
