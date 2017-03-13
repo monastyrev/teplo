@@ -146,7 +146,7 @@ window.onload = function() {
     }
     
     function calculateResult() {
-      if (model.p == undefined) return;
+      if (model.P == undefined) return;
       var q = $('input[name=q]').val(); // шаг укладки кабеля
       q = parseFloat(q);
       var k = $('input[name=k]').val(); // число полос кабеля
