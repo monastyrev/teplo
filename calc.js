@@ -83,11 +83,11 @@ window.onload = function() {
     $('.calculate-first').click(function(e) {
       calculateParams();
       calculateData();
-      calculateSecond();
+      calculateResult();
     });
     
     $('.calculate-second').click(function(e) {
-      calculateSecond();
+      calculateResult();
     });
   
     function calculateParams() {
@@ -149,7 +149,7 @@ window.onload = function() {
           }
     }
     
-    function calculateSecond() {
+    function calculateResult() {
       if (model.p == undefined) return;
       var q = $('input[name=q]').val(); // шаг укладки кабеля
       q = parseFloat(q);
