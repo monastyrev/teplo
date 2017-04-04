@@ -46,10 +46,10 @@ window.onload = function() {
     function nearest(dict, value) {
       for (var i = 0; i < dict.length; i++) {
           if (dict[i][0] > value) {
-              return dict[i][1];
+              return {l:dict[i][0],p:dict[i][1]};
           }
       }
-      return "Нет";
+      return {l:"",p:""};
     }
 //    
 //     for(var i=0; i<300; i+=10)
@@ -74,8 +74,10 @@ window.onload = function() {
       var P = l1 * 0.053 + l2 * 0.053 + l3 * 0.099;
       model.P = P;
       console.log("P=" + P);
-      $('input[name=cable1]').val(nearest(NEXANS, L));
-      $('input[name=cable2]').val(nearest(PROFITHERM, L));
+      var nexans = nearest(NEXANS, L);
+      $('#cable1').html(nexans.l + " м, " + nexans.p + " Вт");
+      var profi = nearest(PROFITHERM, L);
+      $('#cable2').html(profi.l + " м, " + profi.p + " Вт");
       $('#Pmin').html(L * 0.023);
       $('#Pmax').html(L * 0.030);
     }
