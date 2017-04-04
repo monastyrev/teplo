@@ -44,10 +44,10 @@ window.onload = function() {
     function nearest(dict, value) {
       for (var i = 0; i < dict.length; i++) {
           if (dict[i][0] > value) {
-              return {l:dict[i][0],p:dict[i][1]};
+              return {l:dict[i][0], p:dict[i][1]};
           }
       }
-      return {l:"",p:""};
+      return {l:"", p:""};
     }
 //    
 //     for(var i=0; i<300; i+=10)
