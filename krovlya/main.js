@@ -78,7 +78,7 @@ window.onload = function() {
       $('#cable1').html(nexans.l + " м, " + nexans.p + " Вт");
       var profi = nearest(PROFITHERM, L);
       $('#cable2').html(profi.l + " м, " + profi.p + " Вт");
-      $('#Pmin').html(L * 0.023);
-      $('#Pmax').html(L * 0.030);
+      $('#Pmin').html((L * 0.023).toFixed(2));
+      $('#Pmax').html((L * 0.030).toFixed(2));
     }
   }
