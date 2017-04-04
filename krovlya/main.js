@@ -1,7 +1,5 @@
 window.onload = function() {
-
-    var model = {};
-
+    
     const NEXANS = [
         [12.2, 341],
         [15.7, 438],
@@ -63,16 +61,11 @@ window.onload = function() {
   
     function calculate() {
       var l1 = $('input[name=l1]').val();
-      model.l1 = parseFloat(l1 == '' ? 0 : l1);
       var l2 = $('input[name=l2]').val();
-      model.l2 = parseFloat(l2 == '' ? 0 : l2);
       var l3 = $('input[name=l3]').val();
-      model.l3 = parseFloat(l3 == '' ? 0 : l3);
       var L = l1 * 2 + l2 * 2 + l3 * 4;
-      model.L = L;
       console.log("L=" + L);
       var P = l1 * 0.053 + l2 * 0.053 + l3 * 0.099;
-      model.P = P;
       console.log("P=" + P);
       var nexans = nearest(NEXANS, L);
       $('#cable1').html(nexans.l + " м, " + nexans.p + " Вт");
