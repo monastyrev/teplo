@@ -63,7 +63,6 @@ window.onload = function() {
       var l1 = $('input[name=l1]').val();
       var l2 = $('input[name=l2]').val();
       var l3 = $('input[name=l3]').val();
-      if (l1 == '' && l2 == '' && l3 == '') return;
       var L = l1 * 2 + l2 * 2 + l3 * 4;
       console.log("L=" + L);
       var P = l1 * 0.053 + l2 * 0.053 + l3 * 0.099;
