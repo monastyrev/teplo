@@ -58,6 +58,7 @@ window.onload = function() {
       console.log(i + "~" + nearestEven(i)); */
     
     function nearestPower(value) {
+      console.log("input: " + value);
       var index = 0;
       if (value <= POWER_LENGTH[0][0]) {
         return POWER_LENGTH[0];
@@ -66,12 +67,12 @@ window.onload = function() {
         return POWER_LENGTH[POWER_LENGTH.length - 1];
       }
       for(var i = 0; i < POWER_LENGTH.length; i++) {
-      var powerMin = POWER_LENGTH[i][0];
-      var powerMax = POWER_LENGTH[i + 1][0];
-      if (value >= powerMin && value < powerMax) {
-        index = value < powerMin * 1.09 ? i : i + 1;
-        return POWER_LENGTH[index];
-      }
+        var powerMin = POWER_LENGTH[i][0];
+        var powerMax = POWER_LENGTH[i + 1][0];
+        if (value >= powerMin && value < powerMax) {
+            index = value < powerMin * 1.09 ? i : i + 1;
+            return POWER_LENGTH[index];
+        }
       }
     }
     
@@ -103,11 +104,11 @@ window.onload = function() {
       model.b = parseFloat(b == '' ? 0 : b);
       if (model.a == 0 || model.b == 0) return;
       var a1 = $('input[name=a1]').val();
-      model.a1 = parseFloat(a1 == '' ? 0 : a1);
+      model.a1 = parseFloat((a1 == '' || a1 == undefined) ? 0 : a1);
       var b1 = $('input[name=b1]').val();
-      model.b1 = parseFloat(b1 == '' ? 0 : b1);
+      model.b1 = parseFloat(b1 == '' || b1 == undefined ? 0 : b1);
       if (model.a1 == 0 || model.b1 == 0) model.size1 = false;
-      var S = a * b + a1 * b1;
+      var S = model.a * model.b + model.a1 * model.b1;
       model.S = parseFloat(S.toFixed(2));
       $('input[name=S]').val(model.S);
       // ------------------------------
