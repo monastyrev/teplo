@@ -46,16 +46,14 @@ window.onload = function() {
       return STEP[index];
     }
   
-    // ближайшее меньшее четное
     function nearestEven(value) {
-      if (value == 0) return 0;
-      var min = Math.floor(value - 1);
-      var max = Math.ceil(value - 1);
-      return max % 2 == 0 ? max : min;
+      return Math.round(value);
+      //var max = Math.floor(value);
+      //return max % 2 == 0 ? max : max - 1;
     }
-    
-/*     for(var i=0; i<10; i+=0.1)
-      console.log(i + "~" + nearestEven(i)); */
+
+//     for(var i=0; i<10; i+=0.1)
+//      console.log(i + "~" + nearestEven(i)); 
     
     function nearestPower(value) {
       console.log("input: " + value);
