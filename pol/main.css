@@ -3,3 +3,68 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
   -webkit-appearance: none;
   margin: 0;
 }
+
+.form-group .cable, a {
+  color: #3276b1;
+  font-size: 14px;
+}
+
+.form-group .cable, li {
+  margin-bottom: 10px;
+}
+
+.form-group label {
+  font-style: italic;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+label {
+  margin-bottom: 2px;
+}
+
+.form-group label>h3 {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.form-group>legend, h2 {
+  font-size: 15px;
+  color: #092782;
+}
+
+#tab_b .form-group {
+  width: 75%;
+  margin-right: -35px;
+}
+
+.calculator-image {
+  text-align: center;
+}
+
+#cable1, #cable2, #cable3, #cable4 {
+  color: crimson;
+}
+
+.cable {
+  padding-top: 10px;
+}
+
+.cable .form-group {
+  width: 100%;
+  border-bottom: 1px solid #ededed;
+  height: 75px;
+}
+
+.cable img {
+  width: 50px;
+  float: left;
+}
+
+.form-group {
+  margin-bottom: 0px;
+}
+
+.btn-sm {
+  margin: 10px 0px 10px 15px;
+}
