@@ -274,7 +274,7 @@ const SQUARE_PRICE_ProfithermEkoFlex = [
         if (value <= lookupTable[0][1]) {
           return lookupTable[0];
         }
-        if (value >= lookupTable[lookupTable.length - 1][0]) {
+        if (value >= lookupTable[lookupTable.length - 1][1]) {
           return lookupTable[lookupTable.length - 1];
         }
         for(var i = 0; i < lookupTable.length; i++) {
