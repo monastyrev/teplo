@@ -269,6 +269,24 @@ const SQUARE_PRICE_ProfithermEkoFlex = [
       }
     }
     
+    function nearestSquare(value, lookupTable) {
+        var index = 0;
+        if (value <= lookupTable[0][1]) {
+          return lookupTable[0];
+        }
+        if (value >= lookupTable[lookupTable.length - 1][0]) {
+          return lookupTable[lookupTable.length - 1];
+        }
+        for(var i = 0; i < lookupTable.length; i++) {
+          var squareMin = lookupTable[i][1];
+          var squareMax = lookupTable[i + 1][1];
+          if (value >= squareMin && value < squareMax) {
+              index = value < squareMin * 1.09 ? i : i + 1;
+              return lookupTable[index];
+          }
+        }
+      }
+    
     function calculateBySquareAndPrice(square, price) {
         return square * price;
     }
@@ -349,19 +367,25 @@ const SQUARE_PRICE_ProfithermEkoFlex = [
     }
     
     function calculateMate(square) {
-        render('#nMat', SQUARE_PRICE_NexansMat, square);
-        render('#nFlex', SQUARE_PRICE_NexansFlex, square);
-        render('#pMat1', SQUARE_PRICE_ProfithermMat, square);
-        render('#pMat2', SQUARE_PRICE_ProfithermEkoMat, square);
-        render('#pFlex', SQUARE_PRICE_ProfithermEkoFlex, square);
+        render1('#nMat', SQUARE_PRICE_NexansMat, square);
+        render1('#nFlex', SQUARE_PRICE_NexansFlex, square);
+        render1('#pMat1', SQUARE_PRICE_ProfithermMat, square);
+        render1('#pMat2', SQUARE_PRICE_ProfithermEkoMat, square);
+        render1('#pFlex', SQUARE_PRICE_ProfithermEkoFlex, square);
     }
     
     function calculateIrfilm(square) {
-        render('#slim', SQUARE_PRICE_ProfithermSlim, square);
+        render1('#slim', SQUARE_PRICE_ProfithermSlim, square);
     }
     
     function render(id, data, input) {
         var row = nearestPower(input, data);
+        $(id).html(row[0] + "Вт | " + row[1] + "м | " + row[2] + "грн.");
+        $(id).parent().parent().show();
+    }
+    
+    function render1(id, data, input) {
+        var row = nearestSquare(input, data);
         $(id).html(row[0] + "Вт | " + row[1] + "м | " + row[2] + "грн.");
         $(id).parent().parent().show();
     }
