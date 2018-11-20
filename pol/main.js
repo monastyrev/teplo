@@ -1,4 +1,4 @@
-window.onload = function() {
+$(function(){
 
     var model = {};
     
@@ -295,6 +295,7 @@ const SQUARE_PRICE_ProfithermEkoFlex = [
       console.log(i + "~" + nearestPower(i)); */
     
     $(document).on("submit", false);
+    $('.cable .form-group').hide();
       
     $('.calculate-first').click(function(e) {
       $('.cable .form-group').hide();
@@ -390,4 +391,4 @@ const SQUARE_PRICE_ProfithermEkoFlex = [
         $(id).parent().parent().show();
     }
   
-  }
+  });
