@@ -125,9 +125,9 @@ window.onload = function() {
       [2205, 190.8, 7176]
       ];
     
-    function nearest(dict, value) {
+    function nearest(dict, power, length) {
       for (var i = 0; i < dict.length; i++) {
-          if (dict[i][0] > value) {
+          if (dict[i][0] > power && dict[i][1] > length) {
               return {p:dict[i][0], l:dict[i][1], c:dict[i][2]};
           }
       }
@@ -158,11 +158,11 @@ window.onload = function() {
       var power = unitPower * length;
       console.log(power + ' Вт');
       
-      var nexans2r_17 = nearest(Nexans2R_17, power);
+      var nexans2r_17 = nearest(Nexans2R_17, power, length);
       $('#cable1').html(nexans2r_17.p + " Вт | " + nexans2r_17.l + " м | " + nexans2r_17.c + "грн.");
-      var profith_eko = nearest(ProfithermEko, power);
+      var profith_eko = nearest(ProfithermEko, power, length);
       $('#cable2').html(profith_eko.p + " Вт | " + profith_eko.l + " м | " + profith_eko.c + "грн.");
-      var profith_flex = nearest(ProfithermFlex, power);
+      var profith_flex = nearest(ProfithermFlex, power, length);
       $('#cable3').html(profith_flex.p + " Вт | " + profith_flex.l + " м | " + profith_flex.c + "грн.");
      
     }
