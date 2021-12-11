@@ -10,5 +10,5 @@ jobs:
     if: github.ref == 'refs/heads/develop'
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout source code ${{ github.run_id }} : ${{ github.run_number }}
+      - name: Checkout source code ${{ github.run_id }} ${{ github.run_number }}
         run: echo 'Checkout code'
