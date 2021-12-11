@@ -29,10 +29,7 @@ jobs:
 
       - name: Upload DEV artifact
         if: github.ref == 'refs/heads/develop'
-        uses: actions/upload-artifact@v2
-        with:
-          name: pol-dev
-          path: pol
+        run: echo 'Upload DEV'
 
       - name: Build QA
         if: github.ref == 'refs/heads/develop'
@@ -40,10 +37,7 @@ jobs:
 
       - name: Upload QA artifact
         if: github.ref == 'refs/heads/develop'
-        uses: actions/upload-artifact@v2
-        with:
-          name: pol-qa
-          path: pol
+        run: echo 'Upload QA'
 
       - name: Build PROD
         if: github.ref == 'refs/heads/master'
@@ -51,10 +45,7 @@ jobs:
 
       - name: Upload PROD artifact
         if: github.ref == 'refs/heads/master'
-        uses: actions/upload-artifact@v2
-        with:
-          name: pol-prod
-          path: pol
+        run: echo 'Upload PROD'
 
   deploy-dev:
     name: Deploy to DEV
