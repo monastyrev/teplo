@@ -1,0 +1,22 @@
+name: Pull Request Pipeline
+
+on:
+  pull_request:
+    branches: [ develop ]
+
+jobs:
+  install-and-test:
+    name: Install and Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source code
+        run: echo 'Checkout code'
+
+      - name: Install dependecies
+        run: echo 'INstall dependencides'
+
+      - name: Lint code
+        run: echo 'Lint'
+
+      - name: Run unit tests
+        run: echo 'Test'
