@@ -1,0 +1,114 @@
+name: Build Pipeline
+
+on:
+  push:
+    branches:
+      - develop
+  workflow_dispatch:
+
+jobs:
+  build-and-test:
+    name: Validate and Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source code
+        run: echo 'Checkout code'
+
+      - name: Install dependecies
+        run: echo 'INstall dependencides'
+
+      - name: Lint code
+        run: echo 'Lint'
+
+      - name: Run unit tests
+        run: echo 'Test'
+
+      - name: Build DEV
+        if: github.ref == 'refs/heads/develop'
+        run: echo 'Build DEV'
+
+      - name: Upload DEV artifact
+        if: github.ref == 'refs/heads/develop'
+        uses: actions/upload-artifact@v2
+        with:
+          name: pol-dev
+          path: pol
+
+      - name: Build QA
+        if: github.ref == 'refs/heads/develop'
+        run: echo 'Build QA'
+
+      - name: Upload QA artifact
+        if: github.ref == 'refs/heads/develop'
+        uses: actions/upload-artifact@v2
+        with:
+          name: pol-qa
+          path: pol
+
+      - name: Build PROD
+        if: github.ref == 'refs/heads/master'
+        run: echo 'Build PROD'
+
+      - name: Upload PROD artifact
+        if: github.ref == 'refs/heads/master'
+        uses: actions/upload-artifact@v2
+        with:
+          name: pol-prod
+          path: pol
+
+  deploy-dev:
+    name: Deploy to DEV
+    if: github.ref == 'refs/heads/develop'
+    needs: [build-and-test]
+    runs-on: ubuntu-latest
+    environment: DEV
+
+    steps:
+      - name: Download a artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: pol-dev
+
+      - name: Configure AWS credentials
+        run: echo 'Configure DEV'
+
+      - name: Deploy
+        run: echo 'Deploy DEV'
+
+  deploy-qa:
+    name: Deploy to QA
+    if: github.ref == 'refs/heads/develop'
+    needs: [deploy-dev]
+    runs-on: ubuntu-latest
+    environment: QA
+
+    steps:
+      - name: Download a artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: pol-qa
+
+      - name: Configure AWS credentials
+        run: echo 'Configure QA'
+
+      - name: Deploy
+        run: echo 'Deploy QA'
+
+  deploy-prod:
+    name: Deploy to PROD
+    if: github.ref == 'refs/heads/master'
+    needs: [build-and-test]
+    runs-on: ubuntu-latest
+    environment: PROD
+
+    steps:
+      - name: Download a artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: pol-prod
+
+      - name: Configure AWS credentials
+        run: echo 'Configure PROD'
+
+      - name: Deploy
+        run: echo 'Deploy PROD'
