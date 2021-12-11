@@ -56,9 +56,7 @@ jobs:
 
     steps:
       - name: Download a artifact
-        uses: actions/download-artifact@v2
-        with:
-          name: pol-dev
+        run: echo 'Download DEV'
 
       - name: Configure AWS credentials
         run: echo 'Configure DEV'
@@ -75,9 +73,7 @@ jobs:
 
     steps:
       - name: Download a artifact
-        uses: actions/download-artifact@v2
-        with:
-          name: pol-qa
+        run: echo 'Download QA'
 
       - name: Configure AWS credentials
         run: echo 'Configure QA'
@@ -94,9 +90,7 @@ jobs:
 
     steps:
       - name: Download a artifact
-        uses: actions/download-artifact@v2
-        with:
-          name: pol-prod
+        run: echo 'Download PROD'
 
       - name: Configure AWS credentials
         run: echo 'Configure PROD'
