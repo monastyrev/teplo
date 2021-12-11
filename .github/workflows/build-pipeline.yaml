@@ -5,23 +5,15 @@ on:
     branches:
       - develop
   workflow_dispatch:
+    inputs:
 
 jobs:
   build-and-test:
     name: Validate and Build
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout source code
+      - name: Checkout source code ${{ github.run_id }} : ${{ github.run_number }}
         run: echo 'Checkout code'
-
-      - name: Install dependecies
-        run: echo 'INstall dependencides'
-
-      - name: Lint code
-        run: echo 'Lint'
-
-      - name: Run unit tests
-        run: echo 'Test'
 
       - name: Build DEV
         if: github.ref == 'refs/heads/develop'
@@ -55,7 +47,7 @@ jobs:
     environment: DEV
 
     steps:
-      - name: Download a artifact
+      - name: Download a artifact ${{ github.run_id }} : ${{ github.run_number }}
         run: echo 'Download DEV'
 
       - name: Configure AWS credentials
@@ -72,7 +64,7 @@ jobs:
     environment: QA
 
     steps:
-      - name: Download a artifact
+      - name: Download a artifact ${{ github.run_id }} : ${{ github.run_number }}
         run: echo 'Download QA'
 
       - name: Configure AWS credentials
@@ -89,7 +81,7 @@ jobs:
     environment: PROD
 
     steps:
-      - name: Download a artifact
+      - name: Download a artifact ${{ github.run_id }} : ${{ github.run_number }}
         run: echo 'Download PROD'
 
       - name: Configure AWS credentials

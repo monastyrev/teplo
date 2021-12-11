@@ -1,12 +1,13 @@
-name: Pull Request Pipeline
+name: Manual Pipeline
 
 on:
-  pull_request:
-    branches: [ develop ]
+  workflow_dispatch:
+    inputs:
 
 jobs:
-  install-and-test:
-    name: Install and Test
+  build-and-test:
+    name: Validate and Build
+    if: github.ref == 'refs/heads/develop'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout source code ${{ github.run_id }} : ${{ github.run_number }}
